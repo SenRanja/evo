@@ -1,0 +1,52 @@
+{
+  "msg": "ok",
+  "data": {
+    "id": 3,
+    "username": "admin",
+    "avatar": "http://...png",
+    "super": 1,
+    "role": {
+      "id": 2,
+      "name": "超级管理员"
+    },
+    "menus": [
+      {
+        "id": 5,
+        "rule_id": 0,
+        "status": 1,
+        "create_time": "2019-08-11 13:36:09",
+        "update_time": "2021-12-21 19:31:11",
+        "name": "后台面板",
+        "desc": "index",
+        "frontpath": null,
+        "condition": null,
+        "menu": 1,
+        "order": 1,
+        "icon": "help",
+        "method": "GET",
+        "child": [
+          {
+            "id": 10,
+            "rule_id": 5,
+            "status": 1,
+            "create_time": "2019-08-11 13:37:02",
+            "update_time": "2021-12-21 20:21:23",
+            "name": "主控台",
+            "desc": "index",
+            "frontpath": "/",
+            "condition": null,
+            "menu": 1,
+            "order": 20,
+            "icon": "home-filled",
+            "method": "GET",
+            "child": [
+            ]
+          }
+        ]
+      }
+    ],
+    "ruleNames": [
+      "createRule,POST"
+    ]
+  }
+}

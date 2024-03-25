@@ -1,0 +1,4279 @@
+{
+	"info": {
+		"_postman_id": "1d34edc2-2083-47f9-9b89-cfecbb8a8289",
+		"name": "考试系统API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23095831",
+		"_collection_link": "https://warped-crater-138866.postman.co/workspace/My-Workspace~cccb6eaf-56ec-4975-8dde-fa9183cef0c0/collection/23095831-1d34edc2-2083-47f9-9b89-cfecbb8a8289?action=share&source=collection_link&creator=23095831"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "验证是否登录",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=toxrkiw3q1fq4aobydivl8oq8y792614544",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"abc123\",\r\n    \"name\": \"John2 Doe\",\r\n    \"stu_id\": \"987654321\",\r\n    \"tel\": \"1234567890\",\r\n    \"id_card\": \"123012345678\",\r\n    \"email\": \"john.doe@examp2le.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.1.58:8000/api/login_check/",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"58"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login_check",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "excel导入用户 -- admin权限",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "excel_file",
+									"type": "file",
+									"src": "/C:/Users/ranja/Desktop/WorkTask/exam_system/testdata/用户模板.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.1.104:8000/api/import_user_from_excel/",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"104"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"import_user_from_excel",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增user--admin权限",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"love\",\r\n    \"name\": \"hyh\",\r\n    \"stu_id\": \"1808004124\",\r\n    \"tel\": \"1122334556\",\r\n    \"id_card\": \"1411912345672\",\r\n    \"email\": \"john.doe@examp2le.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增user 2--admin权限",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"love\",\r\n    \"name\": \"hyh2\",\r\n    \"stu_id\": \"1308004124\",\r\n    \"tel\": \"1222334556\",\r\n    \"id_card\": \"1431912345672\",\r\n    \"email\": \"john.doe@examp2le.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "注册普通用户",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=h3g4hzqu8rjnkvfsd4948ir2f4malu8m",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"abc123\",\r\n    \"name\": \"John3 Doe\",\r\n    \"stu_id\": \"1234654321\",\r\n    \"tel\": \"12334217890\",\r\n    \"id_card\": \"146233345678\",\r\n    \"email\": \"john.doe@examp244le.com\",\r\n    \"role\": \"stu\"\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "注册普通用户2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"abc123\",\r\n    \"name\": \"John Doe\",\r\n    \"stu_id\": \"987654321\",\r\n    \"tel\": \"1234567890\",\r\n    \"id_card\": \"123456789012345678\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"role\": \"stu\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "注册教师",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=h3g4hzqu8rjnkvfsd4948ir2f4malu8m",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"wenying\",\r\n    \"name\": \"wenying\",\r\n    \"stu_id\": \"1772\",\r\n    \"tel\": \"1443890\",\r\n    \"id_card\": \"12323345678\",\r\n    \"email\": \"john.doe@examp32le.com\",\r\n    \"is_staff\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新建超级用户",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"admin\",\r\n    \"name\": \"管理员\",\r\n    \"stu_id\": \"003\",\r\n    \"tel\": \"185362462912\",\r\n    \"id_card\": \"141149904230017\",\r\n    \"email\": \"se3nranj2a@gmail.com\",\r\n    \"super\": true,  \r\n    \"role\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "更改密码--admin权限",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"226899\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/12/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"12",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "更改密码  普通权限",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"old_password\": \"love\",\r\n    \"new_password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/change_passwd/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"change_passwd",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "登录--超级管理员",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login_name\": \"002\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "登录--超级管理员 syj",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login_name\": \"002\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "登录--教师",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login_name\": \"王育东\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "登录--普通用户 吴霜",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login_name\": \"1707004101\",\r\n    \"password\": \"226899\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "登录--普通用户 徐开新",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login_name\": \"1707004122\",\r\n    \"password\": \"235334\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "登录--普通用户 --??",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login_name\": \"hyh\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "登出",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=dex3n3s79wbow5kb7bs10cqu5goxs8ut",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login_name\": \"001\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/logout/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "用户管理",
+			"item": [
+				{
+					"name": "用户list--DRF",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"exam_name\": \"不同时长和满分值的考试\",\r\n    \"exam_type\": \"考试\",\r\n    \"start_time\": \"2022-04-01T10:30:00Z\",\r\n    \"end_time\": \"2022-04-01T13:30:00Z\",\r\n    \"duration\": 180,\r\n    \"max_score\": 200\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/?format=json&page=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "用户list-查询关键字",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"exam_name\": \"不同时长和满分值的考试\",\r\n    \"exam_type\": \"考试\",\r\n    \"start_time\": \"2022-04-01T10:30:00Z\",\r\n    \"end_time\": \"2022-04-01T13:30:00Z\",\r\n    \"duration\": 180,\r\n    \"max_score\": 200\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/?format=json&search=%E7%94%B3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								},
+								{
+									"key": "search",
+									"value": "%E7%94%B3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "班级管理",
+			"item": [
+				{
+					"name": "班级list--DRF",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"exam_name\": \"不同时长和满分值的考试\",\r\n    \"exam_type\": \"考试\",\r\n    \"start_time\": \"2022-04-01T10:30:00Z\",\r\n    \"end_time\": \"2022-04-01T13:30:00Z\",\r\n    \"duration\": 180,\r\n    \"max_score\": 200\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/group/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"group",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "班级删除--DRF",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"exam_name\": \"不同时长和满分值的考试\",\r\n    \"exam_type\": \"考试\",\r\n    \"start_time\": \"2022-04-01T10:30:00Z\",\r\n    \"end_time\": \"2022-04-01T13:30:00Z\",\r\n    \"duration\": 180,\r\n    \"max_score\": 200\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/group/26/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"group",
+								"26",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "班级检索--DRF",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"exam_name\": \"不同时长和满分值的考试\",\r\n    \"exam_type\": \"考试\",\r\n    \"start_time\": \"2022-04-01T10:30:00Z\",\r\n    \"end_time\": \"2022-04-01T13:30:00Z\",\r\n    \"duration\": 180,\r\n    \"max_score\": 200\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/group/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"group",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "group",
+			"item": [
+				{
+					"name": "group DRF",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=jucqty7zveerh13hge9hdstuahnftd7h",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"grp_name\": \"hyh group\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/group/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"group",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查看用户自己的属组",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=jucqty7zveerh13hge9hdstuahnftd7h",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"grp_name\": \"hyh group\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/group_q/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"group_q",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增group--admin权限",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=jucqty7zveerh13hge9hdstuahnftd7h",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"grp_name\": \"17010041\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/group_add/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"group_add",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增group--admin权限 DRF",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=jucqty7zveerh13hge9hdstuahnftd7h",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"shenyanjian\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/group/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"group",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除group--admin权限 DRF",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=jucqty7zveerh13hge9hdstuahnftd7h",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/group/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"group",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "用户添加group",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=jucqty7zveerh13hge9hdstuahnftd7h",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"grp_name\": \"ddd\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/group_add_user/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"group_add_user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除group--admin权限",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=jucqty7zveerh13hge9hdstuahnftd7h",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"abc123\",\r\n    \"name\": \"John2 Doe\",\r\n    \"stu_id\": \"987654321\",\r\n    \"tel\": \"1234567890\",\r\n    \"id_card\": \"123012345678\",\r\n    \"email\": \"john.doe@examp2le.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/group_del/123/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"group_del",
+								"123",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "公告管理",
+			"item": [
+				{
+					"name": "查看公告",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"exam_name\": \"不同时长和满分值的考试\",\r\n    \"exam_type\": \"考试\",\r\n    \"start_time\": \"2022-04-01T10:30:00Z\",\r\n    \"end_time\": \"2022-04-01T13:30:00Z\",\r\n    \"duration\": 180,\r\n    \"max_score\": 200\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/notice/?format=json",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"notice",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增公告",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"化学课教学\",\r\n    \"description\": \"各位课代表注意，今天19点之前务必收起语文作业\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/notice/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"notice",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "修改公告",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"化学课教学--修改\",\r\n    \"description\": \"各位课代表注意，今天19点之前务必收起语文作业\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/notice/4/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"notice",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除公告",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"化学课教学\",\r\n    \"description\": \"各位课代表注意，今天19点之前务必收起语文作业\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/notice/15/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"notice",
+								"15",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增 公告--班级 对应",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"group_class\": \"文山分公司\",\r\n    \"notice_pk\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/notice_class_add/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"notice_class_add",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除 公告--班级 对应",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"group_class\": \"文山分公司\",\r\n    \"notice_pk\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/notice_class_del/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"notice_class_del",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "permission",
+			"item": [
+				{
+					"name": "用户是否有对某表权限",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=jucqty7zveerh13hge9hdstuahnftd7h",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"abc123\",\r\n    \"name\": \"John2 Doe\",\r\n    \"stu_id\": \"987654321\",\r\n    \"tel\": \"1234567890\",\r\n    \"id_card\": \"123012345678\",\r\n    \"email\": \"john.doe@examp2le.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user_has_perm/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user_has_perm",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "video",
+			"item": [
+				{
+					"name": "查看video",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/video/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"video",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增video - drf",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ch\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/video/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"video",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "修改video - drf",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 32,\r\n    \"name\": \"5654gogo2222\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/video/32/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"video",
+								"32",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "修改video - drf Copy",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 32,\r\n    \"name\": \"5654gogo222233\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/video/32/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"video",
+								"32",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增video - drf 无cookie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=jucqty7zveerh13hge9hdstuahnftd7h",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"new - hahaha fffff\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/video/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"video",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除video",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"abc123\",\r\n    \"name\": \"John2 Doe\",\r\n    \"stu_id\": \"987654321\",\r\n    \"tel\": \"1234567890\",\r\n    \"id_card\": \"123012345678\",\r\n    \"email\": \"john.doe@examp2le.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/video/28/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"video",
+								"28",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "试题管理",
+			"item": [
+				{
+					"name": "查看试题 DRF",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"exam_name\": \"不同时长和满分值的考试\",\r\n    \"exam_type\": \"考试\",\r\n    \"start_time\": \"2022-04-01T10:30:00Z\",\r\n    \"end_time\": \"2022-04-01T13:30:00Z\",\r\n    \"duration\": 180,\r\n    \"max_score\": 200\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/exam_question/?format=json",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"exam_question",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增试题 DRF--admin权限",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"question_type\": \"论述\",\r\n    \"reference_answer\": \"C\",\r\n    \"question_name\": \"最喜欢的水果\",\r\n    \"question_text\": \"下列哪种水果是甲最喜欢的？\",\r\n    \"question_options\": [\"苹果\", \"香蕉\", \"橙子\", \"葡萄\"],\r\n    \"difficulty_level\": \"hard\",\r\n    \"description\": \"甲经常在办公室吃的零食\",\r\n    \"subject\": \"食品偏好\",\r\n    \"author\": \"李美芳2333\",\r\n    \"question_database\": \"汉东官员\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/exam_question/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"exam_question",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "excel导入试题 -- admin权限",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "questions_exam_file",
+									"type": "file",
+									"src": "/C:/Users/ranja/Downloads/试题模板.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/import_question_from_excel/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"import_question_from_excel",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查看某考试对应设置题库题型",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"exam_name\": \"不同时长和满分值的考试\",\r\n    \"exam_type\": \"考试\",\r\n    \"start_time\": \"2022-04-01T10:30:00Z\",\r\n    \"end_time\": \"2022-04-01T13:30:00Z\",\r\n    \"duration\": 180,\r\n    \"max_score\": 200\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/exam_manage_question_database/?format=json&exam_id=6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"exam_manage_question_database",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								},
+								{
+									"key": "exam_id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取题库列表",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"exam_name\": \"不同时长和满分值的考试\",\r\n    \"exam_type\": \"考试\",\r\n    \"start_time\": \"2022-04-01T10:30:00Z\",\r\n    \"end_time\": \"2022-04-01T13:30:00Z\",\r\n    \"duration\": 180,\r\n    \"max_score\": 200\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/question_database_list/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"question_database_list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "设置某考试的题库对应",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/update_exam_question/6/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"update_exam_question",
+								"6",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "废 新增 考试--题库对应（多次）",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"question_database\": \"习近平新时代中国特色社会主义思想\",\r\n    \"question_type\": \"单选\",\r\n    \"difficulty_level\": \"easy\",\r\n    \"question_num\": 3,\r\n    \"single_question_score\": 3,\r\n    \"exam_manage\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/exam_manage_question_database/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"exam_manage_question_database",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "废 修改 考试--题库对应(单个多次)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"question_database\": \"2023阳泉国网考试试卷\",\r\n    \"question_type\": \"论述\",\r\n    \"difficulty_level\": \"hard\",\r\n    \"question_num\": 1,\r\n    \"single_question_score\": 25,\r\n    \"exam_manage\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/exam_manage_question_database/4/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"exam_manage_question_database",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "考试管理",
+			"item": [
+				{
+					"name": "查看考试  DRF",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"exam_type\": \"考试\",   // \"mock\" 表示模拟考试\r\n    \"start_time\": \"2022-02-01T08:00:00Z\",   // 具体的开始时间，格式为 ISO 8601\r\n    \"end_time\": \"2022-02-01T10:00:00Z\",     // 具体的结束时间，格式为 ISO 8601\r\n    \"duration\": 120,   // 时长为 120 分钟\r\n    \"max_score\": 100,  // 最高分为 100 分\r\n    \"is_archived\": false  // 未封存\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/exam_manage/?format=json",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"exam_manage",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查看考试By id  DRF",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"exam_type\": \"考试\",   // \"mock\" 表示模拟考试\r\n    \"start_time\": \"2022-02-01T08:00:00Z\",   // 具体的开始时间，格式为 ISO 8601\r\n    \"end_time\": \"2022-02-01T10:00:00Z\",     // 具体的结束时间，格式为 ISO 8601\r\n    \"duration\": 120,   // 时长为 120 分钟\r\n    \"max_score\": 100,  // 最高分为 100 分\r\n    \"is_archived\": false  // 未封存\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/exam_manage/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"exam_manage",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增考试  DRF--普通权限",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"exam_name\": \"2017年度生物医学考试\",\r\n    \"exam_type\": \"模拟\",\r\n    \"start_time\": \"2022-02-15T14:30:00Z\",\r\n    \"end_time\": \"2022-02-15T16:30:00Z\",\r\n    \"duration\": 120,\r\n    \"max_score\": 150\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/exam_manage/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"exam_manage",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增考试  DRF--教师权限",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"exam_name\": \"2017年度生物医学考试\",\r\n    \"exam_type\": \"模拟\",\r\n    \"start_time\": \"2022-02-15T14:30:00Z\",\r\n    \"end_time\": \"2022-02-15T16:30:00Z\",\r\n    \"duration\": 120,\r\n    \"max_score\": 150\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/exam_manage/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"exam_manage",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增考试  DRF--admin权限",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"exam_name\": \"2024全校电力系统考试\",\r\n    \"exam_type\": \"考试\",\r\n    \"start_time\": \"2024-04-02T10:30:00Z\",\r\n    \"end_time\": \"2024-04-02T13:30:00Z\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/exam_manage/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"exam_manage",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "考试--班级  增加对应",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"group_class\": \"17070144\",\r\n    \"exam_manage_pk\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/add_class_exam_manage/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"add_class_exam_manage",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "考试 用户（by class）、老师(by未归档) 查询",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"group_class\": \"17010041\",\r\n    \"exam_manage_pk\": 4\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get_exam_manages/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get_exam_manages",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "考试 普通用户 获取试卷",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get_exam_paper/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get_exam_paper",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取word格式的试卷",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/generate_exam_paper_word/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"generate_exam_paper_word",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "交卷验证身份证后六位",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"exam_manage_id\": 4,\r\n    \"question_list\": [\r\n        {\r\n            \"id\": 267,\r\n            \"stu_answer\": \"C\"\r\n        },\r\n        {\r\n            \"id\": 272,\r\n            \"stu_answer\": \"C\"\r\n        },\r\n        {\r\n            \"id\": 274,\r\n            \"stu_answer\": \"A\"\r\n        },\r\n        {\r\n            \"id\": 363,\r\n            \"stu_answer\": \"ABCD\"\r\n        },\r\n        {\r\n            \"id\": 362,\r\n            \"stu_answer\": \"ABD\"\r\n        },\r\n        {\r\n            \"id\": 384,\r\n            \"stu_answer\": \"1.特征\\n潜伏：仅在server环境探活，其他被感染环境仅潜伏和传播，没有暴露的行为\\n传播方式：利用U盘摆渡传播\\n漏洞利用方式大：利用多个零日漏洞和N day漏洞\\n智慧：劫持离心机发送虚假监控数据\\n2.特点\\n针对性：检测server、西门子等工控环境场景才激活程序行为\\n代价高昂：使用多个0 day漏洞\\n定向性：针对专门工控场景系统\\n3.启示\\n云查杀的普及用以防止此类病毒程序的巨大扩散，避免某程序扩散后但是没有人意识到其巨大的传播能力\"\r\n        },\r\n        {\r\n            \"id\": 383,\r\n            \"stu_answer\": \"1.如何投递到伊朗核电站\\n病毒本身具备传播和潜伏能力，会在win server系列检测是否有西门子系统来决定病毒是否被激活，否则只是静态潜伏和传播。传播方式是用过U盘传播，会利用打印机漏洞、U盘自动播放功能，进行摆渡传输。最终通过这种途径，进入伊朗的核电站系统。\\n2.如何攻击，报废离心机。\\n病毒会劫持控制机发送向监控系统的流量，发送伪造的正常的流量向监控系统，使得监控人员感知不到离心机运转异常；发送超负荷指令给离心机，使得离心机在特定时间超速运转，降低寿命。最终离心机报废。\"\r\n        },\r\n        {\r\n            \"id\": 387,\r\n            \"stu_answer\": \"1.边界测试\\nid 设置为 -1 1 100000000，看内容有什么回显\\n2.判断漏洞点和注⼊类型\\n判断数字型 id=1 and 1=1\\n1 and 1=2 时间盲注 1 and sleep(5);--+\\n字符型 1' and '1'='1 1' and '1'='2 时间盲注 1' and sleep(5)--+\\n3.查列名\\norder by\\n4.联合查询\\nunion select (列数填充满，)group_concat(table_schema,table_name) from information_schema.tables\\n查字段名\\nunion select (列数填充满，)group_concat(columu_name) from information_schema.columns\\n5.直接查得数据\\n\\n获取库名\\n/Less-1/?id=-1'+union+select+222,GROUP_CONCAT(DISTINCT+table_schema+SEPARATOR+',+'),4444+AS+concatenated_schemas+FROM+information_schema.columns%3b--+\\n\\n获取特定库的表名\\n/Less-1/?id=-1' union select 222,GROUP_CONCAT(DISTINCT table_name SEPARATOR ', '),4444 AS concatenated_schemas FROM information_schema.columns where table_schema='security';-- \\n\\n获取特定库的特定表的字段名\\n-1' union select 222,GROUP_CONCAT(DISTINCT column_name SEPARATOR ', '),4444 AS concatenated_schemas FROM information_schema.columns where table_schema='security' and table_name='users';-- \"\r\n        },\r\n        {\r\n            \"id\": 375,\r\n            \"stu_answer\": \"错误\"\r\n        },\r\n        {\r\n            \"id\": 377,\r\n            \"stu_answer\": \"正确\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/check_idcard_tail/123/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"check_idcard_tail",
+								"123",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "学生考试提交成绩",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"exam_manage_id\": 4,\r\n    \"question_list\": [\r\n        {\r\n            \"id\": 267,\r\n            \"stu_answer\": \"C\"\r\n        },\r\n        {\r\n            \"id\": 272,\r\n            \"stu_answer\": \"C\"\r\n        },\r\n        {\r\n            \"id\": 274,\r\n            \"stu_answer\": \"A\"\r\n        },\r\n        {\r\n            \"id\": 363,\r\n            \"stu_answer\": \"ABCD\"\r\n        },\r\n        {\r\n            \"id\": 362,\r\n            \"stu_answer\": \"ABD\"\r\n        },\r\n        {\r\n            \"id\": 384,\r\n            \"stu_answer\": \"1.特征\\n潜伏：仅在server环境探活，其他被感染环境仅潜伏和传播，没有暴露的行为\\n传播方式：利用U盘摆渡传播\\n漏洞利用方式大：利用多个零日漏洞和N day漏洞\\n智慧：劫持离心机发送虚假监控数据\\n2.特点\\n针对性：检测server、西门子等工控环境场景才激活程序行为\\n代价高昂：使用多个0 day漏洞\\n定向性：针对专门工控场景系统\\n3.启示\\n云查杀的普及用以防止此类病毒程序的巨大扩散，避免某程序扩散后但是没有人意识到其巨大的传播能力\"\r\n        },\r\n        {\r\n            \"id\": 383,\r\n            \"stu_answer\": \"1.如何投递到伊朗核电站\\n病毒本身具备传播和潜伏能力，会在win server系列检测是否有西门子系统来决定病毒是否被激活，否则只是静态潜伏和传播。传播方式是用过U盘传播，会利用打印机漏洞、U盘自动播放功能，进行摆渡传输。最终通过这种途径，进入伊朗的核电站系统。\\n2.如何攻击，报废离心机。\\n病毒会劫持控制机发送向监控系统的流量，发送伪造的正常的流量向监控系统，使得监控人员感知不到离心机运转异常；发送超负荷指令给离心机，使得离心机在特定时间超速运转，降低寿命。最终离心机报废。\"\r\n        },\r\n        {\r\n            \"id\": 387,\r\n            \"stu_answer\": \"1.边界测试\\nid 设置为 -1 1 100000000，看内容有什么回显\\n2.判断漏洞点和注⼊类型\\n判断数字型 id=1 and 1=1\\n1 and 1=2 时间盲注 1 and sleep(5);--+\\n字符型 1' and '1'='1 1' and '1'='2 时间盲注 1' and sleep(5)--+\\n3.查列名\\norder by\\n4.联合查询\\nunion select (列数填充满，)group_concat(table_schema,table_name) from information_schema.tables\\n查字段名\\nunion select (列数填充满，)group_concat(columu_name) from information_schema.columns\\n5.直接查得数据\\n\\n获取库名\\n/Less-1/?id=-1'+union+select+222,GROUP_CONCAT(DISTINCT+table_schema+SEPARATOR+',+'),4444+AS+concatenated_schemas+FROM+information_schema.columns%3b--+\\n\\n获取特定库的表名\\n/Less-1/?id=-1' union select 222,GROUP_CONCAT(DISTINCT table_name SEPARATOR ', '),4444 AS concatenated_schemas FROM information_schema.columns where table_schema='security';-- \\n\\n获取特定库的特定表的字段名\\n-1' union select 222,GROUP_CONCAT(DISTINCT column_name SEPARATOR ', '),4444 AS concatenated_schemas FROM information_schema.columns where table_schema='security' and table_name='users';-- \"\r\n        },\r\n        {\r\n            \"id\": 375,\r\n            \"stu_answer\": \"错误\"\r\n        },\r\n        {\r\n            \"id\": 377,\r\n            \"stu_answer\": \"正确\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/calculate_score/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"calculate_score",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "学生获取旧卷数据",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"exam_manage_id\": 4,\r\n    \"question_list\": [\r\n        {\r\n            \"id\": 267,\r\n            \"stu_answer\": \"C\"\r\n        },\r\n        {\r\n            \"id\": 272,\r\n            \"stu_answer\": \"C\"\r\n        },\r\n        {\r\n            \"id\": 274,\r\n            \"stu_answer\": \"A\"\r\n        },\r\n        {\r\n            \"id\": 363,\r\n            \"stu_answer\": \"ABCD\"\r\n        },\r\n        {\r\n            \"id\": 362,\r\n            \"stu_answer\": \"ABD\"\r\n        },\r\n        {\r\n            \"id\": 384,\r\n            \"stu_answer\": \"1.特征\\n潜伏：仅在server环境探活，其他被感染环境仅潜伏和传播，没有暴露的行为\\n传播方式：利用U盘摆渡传播\\n漏洞利用方式大：利用多个零日漏洞和N day漏洞\\n智慧：劫持离心机发送虚假监控数据\\n2.特点\\n针对性：检测server、西门子等工控环境场景才激活程序行为\\n代价高昂：使用多个0 day漏洞\\n定向性：针对专门工控场景系统\\n3.启示\\n云查杀的普及用以防止此类病毒程序的巨大扩散，避免某程序扩散后但是没有人意识到其巨大的传播能力\"\r\n        },\r\n        {\r\n            \"id\": 383,\r\n            \"stu_answer\": \"1.如何投递到伊朗核电站\\n病毒本身具备传播和潜伏能力，会在win server系列检测是否有西门子系统来决定病毒是否被激活，否则只是静态潜伏和传播。传播方式是用过U盘传播，会利用打印机漏洞、U盘自动播放功能，进行摆渡传输。最终通过这种途径，进入伊朗的核电站系统。\\n2.如何攻击，报废离心机。\\n病毒会劫持控制机发送向监控系统的流量，发送伪造的正常的流量向监控系统，使得监控人员感知不到离心机运转异常；发送超负荷指令给离心机，使得离心机在特定时间超速运转，降低寿命。最终离心机报废。\"\r\n        },\r\n        {\r\n            \"id\": 387,\r\n            \"stu_answer\": \"1.边界测试\\nid 设置为 -1 1 100000000，看内容有什么回显\\n2.判断漏洞点和注⼊类型\\n判断数字型 id=1 and 1=1\\n1 and 1=2 时间盲注 1 and sleep(5);--+\\n字符型 1' and '1'='1 1' and '1'='2 时间盲注 1' and sleep(5)--+\\n3.查列名\\norder by\\n4.联合查询\\nunion select (列数填充满，)group_concat(table_schema,table_name) from information_schema.tables\\n查字段名\\nunion select (列数填充满，)group_concat(columu_name) from information_schema.columns\\n5.直接查得数据\\n\\n获取库名\\n/Less-1/?id=-1'+union+select+222,GROUP_CONCAT(DISTINCT+table_schema+SEPARATOR+',+'),4444+AS+concatenated_schemas+FROM+information_schema.columns%3b--+\\n\\n获取特定库的表名\\n/Less-1/?id=-1' union select 222,GROUP_CONCAT(DISTINCT table_name SEPARATOR ', '),4444 AS concatenated_schemas FROM information_schema.columns where table_schema='security';-- \\n\\n获取特定库的特定表的字段名\\n-1' union select 222,GROUP_CONCAT(DISTINCT column_name SEPARATOR ', '),4444 AS concatenated_schemas FROM information_schema.columns where table_schema='security' and table_name='users';-- \"\r\n        },\r\n        {\r\n            \"id\": 375,\r\n            \"stu_answer\": \"错误\"\r\n        },\r\n        {\r\n            \"id\": 377,\r\n            \"stu_answer\": \"正确\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get_old_results/10/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get_old_results",
+								"10",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "老师判分 获取未判分试卷",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"exam_manage_id\": 4,\r\n    \"question_list\": [\r\n        {\r\n            \"id\": 267,\r\n            \"stu_answer\": \"C\"\r\n        },\r\n        {\r\n            \"id\": 272,\r\n            \"stu_answer\": \"C\"\r\n        },\r\n        {\r\n            \"id\": 274,\r\n            \"stu_answer\": \"A\"\r\n        },\r\n        {\r\n            \"id\": 363,\r\n            \"stu_answer\": \"ABCD\"\r\n        },\r\n        {\r\n            \"id\": 362,\r\n            \"stu_answer\": \"ABD\"\r\n        },\r\n        {\r\n            \"id\": 384,\r\n            \"stu_answer\": \"1.特征\\n潜伏：仅在server环境探活，其他被感染环境仅潜伏和传播，没有暴露的行为\\n传播方式：利用U盘摆渡传播\\n漏洞利用方式大：利用多个零日漏洞和N day漏洞\\n智慧：劫持离心机发送虚假监控数据\\n2.特点\\n针对性：检测server、西门子等工控环境场景才激活程序行为\\n代价高昂：使用多个0 day漏洞\\n定向性：针对专门工控场景系统\\n3.启示\\n云查杀的普及用以防止此类病毒程序的巨大扩散，避免某程序扩散后但是没有人意识到其巨大的传播能力\"\r\n        },\r\n        {\r\n            \"id\": 383,\r\n            \"stu_answer\": \"1.如何投递到伊朗核电站\\n病毒本身具备传播和潜伏能力，会在win server系列检测是否有西门子系统来决定病毒是否被激活，否则只是静态潜伏和传播。传播方式是用过U盘传播，会利用打印机漏洞、U盘自动播放功能，进行摆渡传输。最终通过这种途径，进入伊朗的核电站系统。\\n2.如何攻击，报废离心机。\\n病毒会劫持控制机发送向监控系统的流量，发送伪造的正常的流量向监控系统，使得监控人员感知不到离心机运转异常；发送超负荷指令给离心机，使得离心机在特定时间超速运转，降低寿命。最终离心机报废。\"\r\n        },\r\n        {\r\n            \"id\": 387,\r\n            \"stu_answer\": \"1.边界测试\\nid 设置为 -1 1 100000000，看内容有什么回显\\n2.判断漏洞点和注⼊类型\\n判断数字型 id=1 and 1=1\\n1 and 1=2 时间盲注 1 and sleep(5);--+\\n字符型 1' and '1'='1 1' and '1'='2 时间盲注 1' and sleep(5)--+\\n3.查列名\\norder by\\n4.联合查询\\nunion select (列数填充满，)group_concat(table_schema,table_name) from information_schema.tables\\n查字段名\\nunion select (列数填充满，)group_concat(columu_name) from information_schema.columns\\n5.直接查得数据\\n\\n获取库名\\n/Less-1/?id=-1'+union+select+222,GROUP_CONCAT(DISTINCT+table_schema+SEPARATOR+',+'),4444+AS+concatenated_schemas+FROM+information_schema.columns%3b--+\\n\\n获取特定库的表名\\n/Less-1/?id=-1' union select 222,GROUP_CONCAT(DISTINCT table_name SEPARATOR ', '),4444 AS concatenated_schemas FROM information_schema.columns where table_schema='security';-- \\n\\n获取特定库的特定表的字段名\\n-1' union select 222,GROUP_CONCAT(DISTINCT column_name SEPARATOR ', '),4444 AS concatenated_schemas FROM information_schema.columns where table_schema='security' and table_name='users';-- \"\r\n        },\r\n        {\r\n            \"id\": 375,\r\n            \"stu_answer\": \"错误\"\r\n        },\r\n        {\r\n            \"id\": 377,\r\n            \"stu_answer\": \"正确\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get_sub_without_score/10/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get_sub_without_score",
+								"10",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "成绩管理",
+			"item": [
+				{
+					"name": "获取成绩单",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"exam_manage_id\": 4,\r\n    \"question_list\": [\r\n        {\r\n            \"id\": 267,\r\n            \"stu_answer\": \"C\"\r\n        },\r\n        {\r\n            \"id\": 272,\r\n            \"stu_answer\": \"C\"\r\n        },\r\n        {\r\n            \"id\": 274,\r\n            \"stu_answer\": \"A\"\r\n        },\r\n        {\r\n            \"id\": 363,\r\n            \"stu_answer\": \"ABCD\"\r\n        },\r\n        {\r\n            \"id\": 362,\r\n            \"stu_answer\": \"ABD\"\r\n        },\r\n        {\r\n            \"id\": 384,\r\n            \"stu_answer\": \"1.特征\\n潜伏：仅在server环境探活，其他被感染环境仅潜伏和传播，没有暴露的行为\\n传播方式：利用U盘摆渡传播\\n漏洞利用方式大：利用多个零日漏洞和N day漏洞\\n智慧：劫持离心机发送虚假监控数据\\n2.特点\\n针对性：检测server、西门子等工控环境场景才激活程序行为\\n代价高昂：使用多个0 day漏洞\\n定向性：针对专门工控场景系统\\n3.启示\\n云查杀的普及用以防止此类病毒程序的巨大扩散，避免某程序扩散后但是没有人意识到其巨大的传播能力\"\r\n        },\r\n        {\r\n            \"id\": 383,\r\n            \"stu_answer\": \"1.如何投递到伊朗核电站\\n病毒本身具备传播和潜伏能力，会在win server系列检测是否有西门子系统来决定病毒是否被激活，否则只是静态潜伏和传播。传播方式是用过U盘传播，会利用打印机漏洞、U盘自动播放功能，进行摆渡传输。最终通过这种途径，进入伊朗的核电站系统。\\n2.如何攻击，报废离心机。\\n病毒会劫持控制机发送向监控系统的流量，发送伪造的正常的流量向监控系统，使得监控人员感知不到离心机运转异常；发送超负荷指令给离心机，使得离心机在特定时间超速运转，降低寿命。最终离心机报废。\"\r\n        },\r\n        {\r\n            \"id\": 387,\r\n            \"stu_answer\": \"1.边界测试\\nid 设置为 -1 1 100000000，看内容有什么回显\\n2.判断漏洞点和注⼊类型\\n判断数字型 id=1 and 1=1\\n1 and 1=2 时间盲注 1 and sleep(5);--+\\n字符型 1' and '1'='1 1' and '1'='2 时间盲注 1' and sleep(5)--+\\n3.查列名\\norder by\\n4.联合查询\\nunion select (列数填充满，)group_concat(table_schema,table_name) from information_schema.tables\\n查字段名\\nunion select (列数填充满，)group_concat(columu_name) from information_schema.columns\\n5.直接查得数据\\n\\n获取库名\\n/Less-1/?id=-1'+union+select+222,GROUP_CONCAT(DISTINCT+table_schema+SEPARATOR+',+'),4444+AS+concatenated_schemas+FROM+information_schema.columns%3b--+\\n\\n获取特定库的表名\\n/Less-1/?id=-1' union select 222,GROUP_CONCAT(DISTINCT table_name SEPARATOR ', '),4444 AS concatenated_schemas FROM information_schema.columns where table_schema='security';-- \\n\\n获取特定库的特定表的字段名\\n-1' union select 222,GROUP_CONCAT(DISTINCT column_name SEPARATOR ', '),4444 AS concatenated_schemas FROM information_schema.columns where table_schema='security' and table_name='users';-- \"\r\n        },\r\n        {\r\n            \"id\": 375,\r\n            \"stu_answer\": \"错误\"\r\n        },\r\n        {\r\n            \"id\": 377,\r\n            \"stu_answer\": \"正确\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/exam_score/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"exam_score",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "路由",
+			"item": [
+				{
+					"name": "未授权访问，触发中间件401",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=dex3n3s79wbow5kb7bs10cqu5goxs8ut",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login_name\": \"001\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "拥有cookie状态不触发401",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=qhgwc9heldhsjj5o0d4y2g53mggqlxuy",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login_name\": \"001\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "系统监控及管理",
+			"item": [
+				{
+					"name": "查看系统信息",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get_system_info/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get_system_info",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查看系统信息 panels",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/index_statistics/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"index_statistics",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "初始化设置系统默认参数",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"main_title\": \"五色石考试系统\",\r\n    \"vice_title\": \"中国高等教育学生考试系统\",\r\n    \"login_title\": \"山西大学计算机学院\",\r\n    \"cheat_mouse_out\": 10,\r\n    \"cheat_page_out\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/system_manage/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"system_manage",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取 设置系统参数",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"main_title\": \"五色石考试系统\",\r\n    \"vice_title\": \"中国高等教育学生考试系统\",\r\n    \"login_title\": \"山西大学计算机学院\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/system_manage/1/?format=json",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"system_manage",
+								"1",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "更改设置系统默认参数",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"main_title\": \"五色石考试系统\",\r\n    \"vice_title\": \"中国高等教育学生考试系统\",\r\n    \"login_title\": \"山西大学计算机学院\",\r\n    \"cheat_mouse_out\": 10,\r\n    \"cheat_page_out\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/system_manage/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"system_manage",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "license",
+			"item": [
+				{
+					"name": "查看许可剩余时间",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"question_database\": \"习近平新时代中国特色社会主义思想\",\r\n    \"question_type\": \"判断\",\r\n    \"difficulty_level\": \"middle\",\r\n    \"question_num\": 2,\r\n    \"single_question_score\": 3,\r\n    \"exam_manage\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get_license_time/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get_license_time",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "提交license",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"question_database\": \"习近平新时代中国特色社会主义思想\",\r\n    \"question_type\": \"判断\",\r\n    \"difficulty_level\": \"middle\",\r\n    \"question_num\": 2,\r\n    \"single_question_score\": 3,\r\n    \"exam_manage\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/submit_license/ff6b-41db-0a43-e43e/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"submit_license",
+								"ff6b-41db-0a43-e43e",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "学科管理",
+			"item": [
+				{
+					"name": "学科 DRF",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\": \"语文\",\r\n    \"description\": \"语言的艺术！\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/subject/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"subject",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "学科 非DRF admin看",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\": \"语文\",\r\n    \"description\": \"语言的艺术！\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get_subject_list/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get_subject_list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增学科 DRF",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\": \"化学\",\r\n    \"description\": \"化学3艺术！\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/subject/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"subject",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除 学科 DRF",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\": \"语文\",\r\n    \"description\": \"语言的艺术！\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/subject/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"subject",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "学科-班级 对应关系管理 DRF",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\": \"语文\",\r\n    \"description\": \"语言的艺术！\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/subject_group/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"subject_group",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "学科-班级 对应关系管理 DRF",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"group\": 1,\r\n    \"subject\": 23\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/subject_group/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"subject_group",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "学科-班级 对应关系管理 DRF",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\": \"语文\",\r\n    \"description\": \"语言的艺术！\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/subject_group/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"subject_group",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "学科-班级 对应关系管理 DRF",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\": \"语文\",\r\n    \"description\": \"语言的艺术！\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/subject_group/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"subject_group",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "视频管理",
+			"item": [
+				{
+					"name": "上传视频 -- 非DRF",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/ranja/Desktop/WorkTask/exam_system/testdata/2-图形验证码.mp4"
+								},
+								{
+									"key": "title",
+									"value": "组件学习",
+									"type": "text"
+								},
+								{
+									"key": "order",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "subject",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "user",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/video_upload/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"video_upload",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "视频 -- DRF",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/ranja/Desktop/WorkTask/exam_system/testdata/1-文件下载组件.mp4"
+								},
+								{
+									"key": "title",
+									"value": "组件学习",
+									"type": "text"
+								},
+								{
+									"key": "order",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "subject",
+									"value": "网络安全",
+									"type": "text"
+								},
+								{
+									"key": "user",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/video/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"video",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "学生视角-根据班级获取可看学科",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/ranja/Desktop/WorkTask/exam_system/testdata/1-文件下载组件.mp4"
+								},
+								{
+									"key": "title",
+									"value": "组件学习",
+									"type": "text"
+								},
+								{
+									"key": "order",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "subject",
+									"value": "网络安全",
+									"type": "text"
+								},
+								{
+									"key": "user",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://shenyanjian.cn:8000/api/get_video_subjects/",
+							"protocol": "http",
+							"host": [
+								"shenyanjian",
+								"cn"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get_video_subjects",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "学生视角-根据学科获取视频",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/ranja/Desktop/WorkTask/exam_system/testdata/1-文件下载组件.mp4"
+								},
+								{
+									"key": "title",
+									"value": "组件学习",
+									"type": "text"
+								},
+								{
+									"key": "order",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "subject",
+									"value": "网络安全",
+									"type": "text"
+								},
+								{
+									"key": "user",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get_video_by_subject/4/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get_video_by_subject",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "资料下载管理",
+			"item": [
+				{
+					"name": "资料下载 -- DRF Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/ranja/Desktop/WorkTask/exam_system/testdata/1-文件下载组件.mp4"
+								},
+								{
+									"key": "title",
+									"value": "组件学习",
+									"type": "text"
+								},
+								{
+									"key": "order",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "subject",
+									"value": "网络安全",
+									"type": "text"
+								},
+								{
+									"key": "user",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://shenyanjian.cn:8000/api/ftp/",
+							"protocol": "http",
+							"host": [
+								"shenyanjian",
+								"cn"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ftp",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "学生视角-根据学科获取文档资料",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/ranja/Desktop/WorkTask/exam_system/testdata/1-文件下载组件.mp4"
+								},
+								{
+									"key": "title",
+									"value": "组件学习",
+									"type": "text"
+								},
+								{
+									"key": "order",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "subject",
+									"value": "网络安全",
+									"type": "text"
+								},
+								{
+									"key": "user",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get_ftps_by_subject/4/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get_ftps_by_subject",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "上传资料 -- 非DRF",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/phpstudy_pro/www_bak/COPYING.txt"
+								},
+								{
+									"key": "title",
+									"value": "DVWA学习",
+									"type": "text"
+								},
+								{
+									"key": "order",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "subject",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "user",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/ftp_upload/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ftp_upload",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "功能模块管理",
+			"item": [
+				{
+					"name": "获取菜单、规则",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get_info/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get_info",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "添加菜单",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"menus\": \"用户管理\",\r\n    \"child\": \"批量用户\",\r\n    \"description\": \"12322213\",\r\n    \"order\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/module/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"module",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "excel 批量导入菜单",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "exam_file",
+									"type": "file",
+									"src": "/C:/Users/ranja/Desktop/WorkTask/exam_system/testdata/菜单模板.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/import_menu_excel/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"import_menu_excel",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "excel 批量导入菜单 syj",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "exam_file",
+									"type": "file",
+									"src": "/C:/Users/ranja/Desktop/WorkTask/exam_system/testdata/菜单模板.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://shenyanjian.cn:8000/api/import_menu_excel/",
+							"protocol": "http",
+							"host": [
+								"shenyanjian",
+								"cn"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"import_menu_excel",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "测试:组是否可以被对象级权限赋权",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/grp_assign_module/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"grp_assign_module",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "test",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "session_id=tkng3l34l8aiv4twbhu4gur9uvk9askb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/test/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"test",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "测试API",
+			"item": [
+				{
+					"name": "登录",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://ceshi13.dishait.cn/admin/login",
+							"protocol": "http",
+							"host": [
+								"ceshi13",
+								"dishait",
+								"cn"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取管理员信息和权限菜单",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "bdca25860f8b022f8f38dbb09277e6e83107e3c7",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://ceshi13.dishait.cn/admin/getinfo",
+							"protocol": "http",
+							"host": [
+								"ceshi13",
+								"dishait",
+								"cn"
+							],
+							"path": [
+								"admin",
+								"getinfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取后台主控",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "bdca25860f8b022f8f38dbb09277e6e83107e3c7",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://ceshi13.dishait.cn/admin/statistics1",
+							"protocol": "http",
+							"host": [
+								"ceshi13",
+								"dishait",
+								"cn"
+							],
+							"path": [
+								"admin",
+								"statistics1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取后台主控 selfTest",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "bdca25860f8b022f8f38dbb09277e6e83107e3c7",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin_statistics/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin_statistics",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取后台主控3",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "bdca25860f8b022f8f38dbb09277e6e83107e3c7",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://ceshi13.dishait.cn/admin/statistics3?type=hour",
+							"protocol": "http",
+							"host": [
+								"ceshi13",
+								"dishait",
+								"cn"
+							],
+							"path": [
+								"admin",
+								"statistics3"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "hour"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取后台主控3 SelfTest",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "bdca25860f8b022f8f38dbb09277e6e83107e3c7",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin_statistics3/?type=week",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin_statistics3",
+								""
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "week"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取后台主控2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "bdca25860f8b022f8f38dbb09277e6e83107e3c7",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://ceshi13.dishait.cn/admin/statistics2",
+							"protocol": "http",
+							"host": [
+								"ceshi13",
+								"dishait",
+								"cn"
+							],
+							"path": [
+								"admin",
+								"statistics2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取后台主控2 SelfTest",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "bdca25860f8b022f8f38dbb09277e6e83107e3c7",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin_statistics2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin_statistics2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "图库列表",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "bdca25860f8b022f8f38dbb09277e6e83107e3c7",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://ceshi13.dishait.cn/admin/image_class/1",
+							"protocol": "http",
+							"host": [
+								"ceshi13",
+								"dishait",
+								"cn"
+							],
+							"path": [
+								"admin",
+								"image_class",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

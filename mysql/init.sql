@@ -1,0 +1,1 @@
+CREATE DATABASE IF NOT EXISTS exam_system default charset = utf8;

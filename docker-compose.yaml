@@ -1,0 +1,62 @@
+version: '3'
+
+services:
+  # 后端
+  backend:
+    build: ./backend
+    container_name: es_backend
+    hostname: es_backend
+    # 同 docker-network 内部通信不需要开放端口，其Dockerfile也不需要EXPOSE端口，减小非必要暴露
+    ports:
+      - 8000:8000
+    networks:
+      - es
+    volumes:
+      - ./mysql/volume:/app/volume/
+    restart: always
+    depends_on:
+      - db
+
+  # 前端
+  front:
+    build: ./front
+    container_name: es_front
+    hostname: es_front
+    ports:
+       - "80:80"
+    networks:
+       - es
+    volumes:
+      - ./mysql/volume:/mnt
+    restart: always
+
+  # 数据库
+  db:
+    image: mysql:5.6
+    container_name: es_mysql
+    hostname: es_mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=1qaz@WSX
+      - TZ=Asia/Shanghai
+      - SET_CONTAINER_TIMEZONE=true
+      - CONTAINER_TIMEZONE=Asia/Shanghai
+    # docker network内部通信 不需要暴露，减小非必要暴露
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql/conf:/etc/mysql/conf.d
+      - ./mysql/conf:/etc/mysql/mysql.conf.d
+      # 此mysql的docker数据目录在 /usr/data
+#      - ./mysql/data:/var/lib/mysql
+      - ./mysql/data:/usr/data
+      - ./mysql/logs:/var/log/mysql
+      - /etc/localtime:/etc/localtime:ro
+      # 建库，容器每次生成默认触发此init.sql脚本
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - es
+    restart: always
+
+networks:
+  es:
+    driver: bridge
