@@ -15,9 +15,11 @@ dist-ssr
 # big files
 *.mp4
 backend/volume/media/documents/*
+!backend/volume/media/documents/.gitkeep
 backend/volume/media/import_excel_upload/*
+!backend/volume/media/import_excel_upload/.gitkeep
 backend/volume/media/videos/*
-backend/venv
+!backend/volume/media/videos/.gitkeep
 
 # python
 **/__pycache__/
