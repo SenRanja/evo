@@ -32,3 +32,7 @@ But once you understand the basic structure of the system, you can easily expand
 ![](img/2024-03-25-18-16-00.png)
 
 
+# todo
+
+- [ ] cancel the license setting
+- [ ] make the Docker extract the files more accurately
