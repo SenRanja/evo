@@ -24,9 +24,14 @@ backend/volume/media/videos/*
 # python
 **/__pycache__/
 **.pyc
+# 忽略pycharm
+**/.idea/
+# 忽略虚拟环境
+**/venv
+
 
 # Editor directories and files
-.vscode/*
+**/.vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store

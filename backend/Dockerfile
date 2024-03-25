@@ -7,7 +7,10 @@ ENV PYTHONUNBUFFERED 1
 # 创建并切换到工作目录
 WORKDIR /app
 
+# 复制文件
 COPY . /app/
+
+# 换源
 # COPY ./sources.list /etc/apt/sources.list
 
 # 安装加密组件库
