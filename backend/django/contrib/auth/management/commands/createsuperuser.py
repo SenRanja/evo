@@ -1,6 +1,10 @@
 # encoding=utf-8
 """
 Management utility to create superusers.
+
+因为我自定义了User的Model，所以默认情况下 manage.py createsuperuser 命令无法使用
+此处我进行了修改，但是懒得动了，修改失败，代码痕迹在此，此处代码处于实际废弃情况
+
 """
 import getpass
 import os
@@ -33,10 +37,19 @@ class Command(BaseCommand):
         self.username_field = self.UserModel._meta.get_field(self.UserModel.USERNAME_FIELD)
 
     def add_arguments(self, parser):
-        parser.add_argument(
-            '--%s' % self.UserModel.USERNAME_FIELD,
-            help='Specifies the login for the superuser.',
-        )
+
+        # 自定义命令行支持
+        parser.add_argument('--name', dest='name', default='', help='name')
+        parser.add_argument('--stu_id', dest='stu_id', default='', help='stu_id')
+        parser.add_argument('--tel', dest='tel', default='', help='tel')
+        parser.add_argument('--id_card', dest='id_card', default='', help='id_card')
+        parser.add_argument('--email', dest='email', default='', help='email')
+        parser.add_argument('--role', dest='role', default='', help='role')
+
+        # parser.add_argument(
+        #     '--%s' % self.UserModel.USERNAME_FIELD,
+        #     help='Specifies the login for the superuser.',
+        # )
         parser.add_argument(
             '--noinput', '--no-input', action='store_false', dest='interactive',
             help=(
@@ -186,7 +199,7 @@ class Command(BaseCommand):
                         raise CommandError('You must use --%s with --noinput.' % field_name)
                     field = self.UserModel._meta.get_field(field_name)
                     user_data[field_name] = field.clean(value, None)
-
+            print(user_data)
             self.UserModel._default_manager.db_manager(database).create_superuser(**user_data)
             if options['verbosity'] >= 1:
                 self.stdout.write("Superuser created successfully.")

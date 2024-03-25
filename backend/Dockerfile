@@ -19,7 +19,13 @@ COPY . /app/
 RUN apt-get update -y && apt-get install -y build-essential libssl-dev libffi-dev python3-dev uwsgi-plugin-python3 cron vim net-tools
 
 # 安装 Python 依赖
-RUN pip install -r requirements.txt && pip install uwsgi && mkdir -p /var/log/uwsgi
+RUN pip install --upgrade pip && pip install -r requirements.txt && pip install uwsgi && mkdir -p /var/log/uwsgi
+
+# 数据迁移
+RUN /usr/local/bin/python /app/manage.py makemigrations user video notice question_manage exam_manage exam_score license subject_manage module system_manage system_monitor ftp message_handle && /usr/local/bin/python /app/manage.py migrate
+
+# 新建默认用户
+RUN /usr/local/bin/python /app/init_default_admin.py
 
 # 防破解 crontab (手动)
 # RUN echo "* * * * * root cd /app/scripts/;/usr/local/bin/python /app/scripts/timer_add.py >> /var/log/timer.log 2>&1" >> /etc/crontab && /etc/init.d/cron start && /etc/init.d/cron status

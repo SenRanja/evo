@@ -4,11 +4,12 @@ services:
   # 后端
   backend:
     build: ./backend
+    image: evo_backend:V0.0.1
     container_name: es_backend
     hostname: es_backend
     # 同 docker-network 内部通信不需要开放端口，其Dockerfile也不需要EXPOSE端口，减小非必要暴露
-    ports:
-      - 8000:8000
+#    ports:
+#      - 8000:8000
     networks:
       - es
     volumes:
@@ -41,8 +42,8 @@ services:
       - SET_CONTAINER_TIMEZONE=true
       - CONTAINER_TIMEZONE=Asia/Shanghai
     # docker network内部通信 不需要暴露，减小非必要暴露
-    ports:
-      - 3306:3306
+#    ports:
+#      - 3306:3306
     volumes:
       - ./mysql/conf:/etc/mysql/conf.d
       - ./mysql/conf:/etc/mysql/mysql.conf.d
