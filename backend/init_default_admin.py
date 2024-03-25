@@ -1,5 +1,7 @@
 # encoding=utf-8
 
+__doc__ = """本脚本仅能在django已经连接数据库的情况下才能独立使用"""
+
 # 脚本外使用django代码需要初始化django环境
 import os
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'exam_system.settings')
