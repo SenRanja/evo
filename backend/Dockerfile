@@ -22,7 +22,7 @@ RUN apt-get update -y && apt-get install -y build-essential libssl-dev libffi-de
 RUN pip install --upgrade pip && pip install -r requirements.txt && pip install uwsgi && mkdir -p /var/log/uwsgi
 
 # 数据迁移
-RUN /usr/local/bin/python /app/manage.py makemigrations user video notice question_manage exam_manage exam_score license subject_manage module system_manage system_monitor ftp message_handle && /usr/local/bin/python /app/manage.py migrate
+#RUN /usr/local/bin/python /app/manage.py makemigrations user video notice question_manage exam_manage exam_score license subject_manage module system_manage system_monitor ftp message_handle && /usr/local/bin/python /app/manage.py migrate
 
 # 新建默认用户
 #RUN /usr/local/bin/python /app/init_default_admin.py
