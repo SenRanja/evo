@@ -4,7 +4,7 @@ services:
   # 后端
   backend:
     build: ./backend
-    image: evo_backend:V0.0.1
+    image: evo_backend
     container_name: es_backend
     hostname: es_backend
     # 同 docker-network 内部通信不需要开放端口，其Dockerfile也不需要EXPOSE端口，减小非必要暴露
@@ -21,6 +21,7 @@ services:
   # 前端
   front:
     build: ./front
+    image: evo_front
     container_name: es_front
     hostname: es_front
     ports:
@@ -33,8 +34,8 @@ services:
 
   # 数据库
   db:
-    image: mysql:5.6
     container_name: es_mysql
+    image: mysql:5.6
     hostname: es_mysql
     environment:
       - MYSQL_ROOT_PASSWORD=1qaz@WSX

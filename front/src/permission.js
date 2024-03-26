@@ -35,7 +35,7 @@ router.beforeEach(async (to, from, next) => {
     }
 
     // 设置页面标题
-    let title = to.meta.title ? to.meta.title : "考试系统"
+    let title = to.meta.title ? to.meta.title : "EVO"
     document.title = title
 
     hasNewRoutes ? next(to.fullPath) : next()
