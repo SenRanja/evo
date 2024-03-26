@@ -30,7 +30,7 @@ RUN pip install --upgrade pip && pip install -r requirements.txt && pip install 
 # 防破解 crontab (手动)
 # RUN echo "* * * * * root cd /app/scripts/;/usr/local/bin/python /app/scripts/timer_add.py >> /var/log/timer.log 2>&1" >> /etc/crontab && /etc/init.d/cron start && /etc/init.d/cron status
 
-RUN chmod +x ./init.sh
+RUN chmod +x /app/init.sh
 
 # docker network内部网络通信，内部可直接访问该端口，不需要保留端口
 #EXPOSE 8000
@@ -38,4 +38,4 @@ RUN chmod +x ./init.sh
 # 运行 Django ,此处必须加参数0.0.0.0:8000（不可省略0.0.0.0），否则django在桥接网络环境中不对请求响应
 #CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 # 改用uwsgi启动 uwsgi --ini /path/to/your/uwsgi.ini
-CMD ["./init.sh"]
+CMD ["/app/init.sh"]
