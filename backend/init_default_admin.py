@@ -11,7 +11,7 @@ django.setup()
 import uuid
 import random
 
-from exam_system.settings import EXCEL_IMPORT_QUESTION_ROOT
+from exam_system.settings import MEDIA_ROOT
 from system_manage.models import SystemManageSetting
 
 from openpyxl import load_workbook
@@ -53,7 +53,7 @@ def init_admin():
 def init_menu():
     if len(Module.objects.all()) <= 2:
         roles_list_str = ""
-        menu_excel_file_path = os.path.join(EXCEL_IMPORT_QUESTION_ROOT, 'EVO.xlsx')
+        menu_excel_file_path = os.path.join(MEDIA_ROOT, 'template', 'EVO.xlsx')
         # menu_excel_file_path = os.path.join(r"C:\Users\ranja\Desktop\WorkTask\exam_system\backend\volume\media\template", 'EVO.xlsx')
         wb = load_workbook(menu_excel_file_path)
         handle_sheet = wb.worksheets[0]
